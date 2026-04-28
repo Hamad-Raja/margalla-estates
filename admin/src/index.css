@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base; @tailwind components; @tailwind utilities;
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#06150f;color:#fff}
+.glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(18px)}
+.input-dark{@apply w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 outline-none focus:border-gold-400}
+.btn-primary{@apply rounded-2xl bg-gradient-to-r from-gold-400 to-emerald-300 px-5 py-3 font-black text-estate-950 transition hover:scale-[1.01]}
+.btn-secondary{@apply rounded-2xl border border-white/10 bg-white/10 px-5 py-3 font-bold text-white transition hover:bg-white/15}

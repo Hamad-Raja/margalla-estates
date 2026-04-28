@@ -1,0 +1,7 @@
+import React from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Login from './pages/Login'; import Dashboard from './pages/Dashboard'; import Properties from './pages/Properties'; import PropertyForm from './pages/PropertyForm'; import Appointments from './pages/Appointments'; import Inquiries from './pages/Inquiries'; import Users from './pages/Users';
+const isAdmin=()=>Boolean(localStorage.getItem('margalla_admin_token'));
+function Protected({children}){return isAdmin()?children:<Navigate to="/login" replace/>}
+export default function App(){const location=useLocation();const authPage=location.pathname==='/login';return <div className="min-h-screen bg-estate-950">{!authPage&&<Sidebar/>}<div className={authPage?'':'lg:pl-72'}><Routes><Route path="/login" element={<Login/>}/><Route path="/" element={<Protected><Dashboard/></Protected>}/><Route path="/properties" element={<Protected><Properties/></Protected>}/><Route path="/properties/new" element={<Protected><PropertyForm/></Protected>}/><Route path="/properties/:id/edit" element={<Protected><PropertyForm/></Protected>}/><Route path="/appointments" element={<Protected><Appointments/></Protected>}/><Route path="/inquiries" element={<Protected><Inquiries/></Protected>}/><Route path="/users" element={<Protected><Users/></Protected>}/></Routes></div></div>}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base; @tailwind components; @tailwind utilities;
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#06150f;color:#fff} *{scroll-behavior:smooth}
+.glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(18px)}
+.input-dark{@apply w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 outline-none focus:border-gold-400}
+.btn-primary{@apply rounded-full bg-gradient-to-r from-gold-400 to-emerald-300 px-6 py-3 font-black text-estate-950 shadow-glow transition hover:scale-[1.02]}
+.btn-secondary{@apply rounded-full border border-white/15 bg-white/10 px-6 py-3 font-bold text-white transition hover:bg-white/15}
+.card-hover{@apply transition duration-300 hover:-translate-y-1 hover:border-gold-400/60}
+
+/* Dropdown fix */
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #10251f;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+select option:checked {
+  background-color: #2f3f37;
+  color: #ffffff;
+}
+
+select option:hover {
+  background-color: #facc15;
+  color: #06140f;
+}
