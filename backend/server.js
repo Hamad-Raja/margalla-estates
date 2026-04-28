@@ -34,18 +34,19 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));
 
-app.use(
-  cors({
-    origin: (origin, cb) => {
-      if (!origin || origins.includes(origin)) {
-        return cb(null, true);
-      }
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
 
-      return cb(new Error('CORS blocked'));
-    },
-    credentials: true
-  })
-);
+    if (origins.includes(origin)) {
+      return cb(null, true);
+    }
+
+    console.log("Blocked by CORS:", origin);
+    return cb(new Error('CORS blocked'));
+  },
+  credentials: true
+}));
 
 app.use(
   rateLimit({
