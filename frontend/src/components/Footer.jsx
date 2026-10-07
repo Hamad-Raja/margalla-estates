@@ -40,10 +40,10 @@ export default function Footer() {
               </div>
 
               <div className="leading-tight">
-                <h2 className="text-2xl font-black uppercase tracking-[0.12em] text-[#F4C95D]">
+                <h2 className="brand-title">
                   Margalla Estates
                 </h2>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">
+                <p className="brand-kicker">
                   Islamabad Premium Realty
                 </p>
               </div>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-5 text-sm font-black uppercase tracking-[0.2em] text-[#F4C95D]">
+            <h4 className="type-small-label mb-5 text-[#F4C95D]">
               Quick Links
             </h4>
 
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Property Links */}
           <div>
-            <h4 className="mb-5 text-sm font-black uppercase tracking-[0.2em] text-[#F4C95D]">
+            <h4 className="type-small-label mb-5 text-[#F4C95D]">
               Properties
             </h4>
 
@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-5 text-sm font-black uppercase tracking-[0.2em] text-[#F4C95D]">
+            <h4 className="type-small-label mb-5 text-[#F4C95D]">
               Contact
             </h4>
 

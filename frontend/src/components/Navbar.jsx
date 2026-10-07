@@ -24,8 +24,8 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-4">
-          <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-gold-400/40 shadow-lg shadow-gold-400/20">
+        <Link to="/" className="flex min-w-0 items-center gap-3 sm:gap-4">
+          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-gold-400/40 shadow-lg shadow-gold-400/20 sm:h-14 sm:w-14">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=400&auto=format&fit=crop"
               alt="Margalla Estates"
@@ -34,11 +34,11 @@ export default function Navbar() {
             <div className="absolute inset-0 bg-black/20"></div>
           </div>
 
-          <div className="leading-tight">
-            <h1 className="text-xl font-black uppercase tracking-[0.12em] text-[#F4C95D] sm:text-2xl">
+          <div className="min-w-0 leading-tight">
+            <h1 className="brand-title">
               Margalla Estates
             </h1>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">
+            <p className="brand-kicker">
               Islamabad Premium Realty
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function Navbar() {
               key={to}
               to={to}
               className={({ isActive }) =>
-                `text-sm font-bold transition ${
+                `text-sm font-semibold tracking-[0.01em] transition ${
                   isActive
                     ? 'text-[#F4C95D]'
                     : 'text-slate-200 hover:text-[#F4C95D]'
@@ -77,7 +77,7 @@ export default function Navbar() {
 
               <button
                 onClick={handleLogout}
-                className="inline-flex items-center gap-2 rounded-full bg-[#F4C95D] px-5 py-2.5 text-sm font-bold text-estate-950 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#F4C95D] px-5 py-2.5 text-sm font-semibold tracking-[0.01em] text-estate-950 transition hover:scale-[1.02]"
               >
                 <LogOut className="h-4 w-4" />
                 Logout
@@ -86,7 +86,7 @@ export default function Navbar() {
           ) : (
             <Link
               to="/auth"
-              className="rounded-full bg-[#F4C95D] px-6 py-2.5 text-sm font-bold text-estate-950 transition hover:scale-[1.02]"
+              className="rounded-full bg-[#F4C95D] px-6 py-2.5 text-sm font-semibold tracking-[0.01em] text-estate-950 transition hover:scale-[1.02]"
             >
               Login / Register
             </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
                 to={to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `rounded-2xl px-4 py-3 font-bold transition ${
+                  `rounded-2xl px-4 py-3 font-semibold transition ${
                     isActive
                       ? 'bg-white/10 text-[#F4C95D]'
                       : 'text-slate-200 hover:bg-white/5 hover:text-[#F4C95D]'
@@ -128,14 +128,14 @@ export default function Navbar() {
                 <Link
                   onClick={() => setOpen(false)}
                   to="/dashboard"
-                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center font-bold text-white"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center font-semibold text-white"
                 >
                   Dashboard
                 </Link>
 
                 <button
                   onClick={handleLogout}
-                  className="rounded-2xl bg-[#F4C95D] px-4 py-3 text-center font-bold text-estate-950"
+                  className="rounded-2xl bg-[#F4C95D] px-4 py-3 text-center font-semibold text-estate-950"
                 >
                   Logout
                 </button>
@@ -144,7 +144,7 @@ export default function Navbar() {
               <Link
                 onClick={() => setOpen(false)}
                 to="/auth"
-                className="rounded-2xl bg-[#F4C95D] px-4 py-3 text-center font-bold text-estate-950"
+                className="rounded-2xl bg-[#F4C95D] px-4 py-3 text-center font-semibold text-estate-950"
               >
                 Login / Register
               </Link>

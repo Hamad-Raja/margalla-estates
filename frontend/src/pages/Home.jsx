@@ -42,16 +42,16 @@ export default function Home() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_.9fr] lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/40 bg-gold-400/10 px-4 py-2 text-sm font-bold text-gold-300">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/40 bg-gold-400/10 px-4 py-2 text-sm font-semibold text-gold-300">
               <Sparkles size={16} /> Premium Islamabad Real Estate
             </span>
-            <h1 className="mt-8 max-w-4xl text-5xl font-black tracking-tight sm:text-7xl">
+            <h1 className="type-hero mt-7 max-w-3xl">
               Find your next luxury home in Islamabad.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            <p className="type-body-lg mt-5 max-w-[42rem] text-slate-300">
               Explore curated houses, villas, apartments and investment plots across Islamabad’s most valuable sectors with trusted advisors and verified listings.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col gap-4 min-[440px]:flex-row min-[440px]:flex-wrap">
               <Link className="btn-primary inline-flex items-center gap-2" to="/properties">
                 Explore Properties <ArrowRight size={18} />
               </Link>
@@ -59,10 +59,10 @@ export default function Home() {
                 Talk to Advisor
               </Link>
             </div>
-            <div className="mt-12 grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="mt-12 grid max-w-2xl grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:grid-cols-4">
               {stats.map(([value, label]) => (
                 <div key={label} className="glass rounded-3xl p-4">
-                  <p className="text-2xl font-black text-gold-300">{value}</p>
+                  <p className="stat-value">{value}</p>
                   <p className="text-xs text-slate-400">{label}</p>
                 </div>
               ))}
@@ -79,7 +79,7 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-8 -left-8 glass rounded-[2rem] p-5 shadow-glow">
               <p className="text-sm text-slate-300">Featured sector</p>
-              <p className="text-3xl font-black text-gold-300">F-7 Islamabad</p>
+              <p className="text-2xl font-semibold leading-tight text-gold-300">F-7 Islamabad</p>
             </div>
           </motion.div>
         </div>
@@ -107,8 +107,8 @@ export default function Home() {
           ].map(([Icon, title, text]) => (
             <div className="glass card-hover rounded-[2rem] p-8" key={title}>
               <Icon className="mb-6 text-gold-300" size={34} />
-              <h3 className="text-2xl font-black">{title}</h3>
-              <p className="mt-3 text-slate-400">{text}</p>
+              <h3 className="type-card-title">{title}</h3>
+              <p className="type-body mt-3 text-slate-400">{text}</p>
             </div>
           ))}
         </div>
@@ -120,15 +120,15 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
-              <span className="mb-4 inline-flex rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-2 text-sm font-bold text-gold-300">
+              <span className="mb-4 inline-flex rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-2 text-sm font-semibold text-gold-300">
                 Premium Islamabad Locations
               </span>
 
-              <h2 className="max-w-2xl text-4xl font-black leading-tight text-white md:text-5xl">
+              <h2 className="type-section-title max-w-2xl text-white">
                 Search by premium area
               </h2>
 
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-400">
+              <p className="type-body-lg mt-4 max-w-2xl text-slate-400">
                 From Margalla-facing sectors to secure gated communities, explore verified
                 homes, villas, apartments, plots, and commercial spaces in Islamabad’s most
                 demanded locations.
@@ -137,7 +137,7 @@ export default function Home() {
 
             <Link
               to="/properties"
-              className="w-fit rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:border-gold-400/40 hover:bg-gold-400 hover:text-estate-950"
+              className="w-fit rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white transition hover:border-gold-400/40 hover:bg-gold-400 hover:text-estate-950"
             >
               View All Locations
             </Link>
@@ -207,16 +207,16 @@ export default function Home() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-estate-950 via-estate-950/55 to-transparent"></div>
 
-                <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/35 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-md">
+                <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/35 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-md">
                   {location.tag}
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400 text-xl font-black text-estate-950 shadow-lg shadow-gold-400/20">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400 text-xl font-semibold text-estate-950 shadow-lg shadow-gold-400/20">
                     {location.name.slice(0, 1)}
                   </div>
 
-                  <h3 className="text-3xl font-black text-white">
+                  <h3 className="text-3xl font-semibold leading-tight text-white">
                     {location.name}
                   </h3>
 
@@ -245,8 +245,8 @@ export default function Home() {
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
               <Building2 className="mb-6 text-gold-300" size={42} />
-              <h2 className="text-4xl font-black">Ready to list or buy in Islamabad?</h2>
-              <p className="mt-4 max-w-2xl text-slate-300">
+              <h2 className="type-section-title max-w-2xl">Ready to list or buy in Islamabad?</h2>
+              <p className="type-body mt-4 max-w-2xl text-slate-300">
                 Share your budget, preferred sector and property type. Our team will shortlist the best options in PKR within your target area.
               </p>
             </div>

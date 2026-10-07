@@ -1,11 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base; @tailwind components; @tailwind utilities;
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:#06150f;color:#fff} *{scroll-behavior:smooth}
-.glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(18px)}
-.input-dark{@apply w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 outline-none focus:border-gold-400}
-.btn-primary{@apply rounded-full bg-gradient-to-r from-gold-400 to-emerald-300 px-6 py-3 font-black text-estate-950 shadow-glow transition hover:scale-[1.02]}
-.btn-secondary{@apply rounded-full border border-white/15 bg-white/10 px-6 py-3 font-bold text-white transition hover:bg-white/15}
-.card-hover{@apply transition duration-300 hover:-translate-y-1 hover:border-gold-400/60}
+
+@layer base {
+  :root {
+    --type-hero: clamp(2.55rem, 4.35vw + 1rem, 4.25rem);
+    --type-page-title: clamp(2.05rem, 2.6vw + 1rem, 3.75rem);
+    --type-section-title: clamp(2rem, 1.8vw + 1rem, 3rem);
+    --type-card-title: clamp(1.2rem, .35vw + 1rem, 1.45rem);
+    --type-body-large: clamp(1rem, .35vw + .92rem, 1.16rem);
+  }
+
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background: #06150f;
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(18px)}
+  .input-dark{@apply w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-[15px] font-medium leading-6 text-white placeholder:text-slate-400 outline-none focus:border-gold-400}
+  .btn-primary{@apply rounded-full bg-gradient-to-r from-gold-400 to-emerald-300 px-6 py-3 text-sm font-semibold tracking-[0.01em] text-estate-950 shadow-glow transition hover:scale-[1.02]}
+  .btn-secondary{@apply rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white transition hover:bg-white/15}
+  .card-hover{@apply transition duration-300 hover:-translate-y-1 hover:border-gold-400/60}
+
+  .type-eyebrow{@apply text-xs font-semibold uppercase tracking-[0.24em] text-gold-300 sm:text-sm}
+  .type-hero{font-size:var(--type-hero);line-height:1.04;font-weight:700;letter-spacing:-0.015em}
+  .type-page-title{font-size:var(--type-page-title);line-height:1.08;font-weight:700;letter-spacing:-0.012em}
+  .type-section-title{font-size:var(--type-section-title);line-height:1.12;font-weight:700;letter-spacing:-0.01em}
+  .type-card-title{font-size:var(--type-card-title);line-height:1.25;font-weight:600;letter-spacing:-0.006em}
+  .type-body-lg{font-size:var(--type-body-large);line-height:1.8}
+  .type-body{@apply text-base leading-7}
+  .type-small-label{@apply text-xs font-semibold uppercase tracking-[0.16em]}
+  .brand-title{@apply text-base font-semibold uppercase tracking-[0.1em] text-[#F4C95D] sm:text-xl sm:tracking-[0.11em]}
+  .brand-kicker{@apply mt-1 text-[9px] font-medium uppercase tracking-[0.18em] text-slate-300 sm:text-[11px] sm:tracking-[0.2em]}
+  .stat-value{@apply text-2xl font-semibold leading-tight text-gold-300}
+}
 
 /* Dropdown fix */
 select {
